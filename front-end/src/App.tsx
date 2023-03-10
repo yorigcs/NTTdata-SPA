@@ -1,9 +1,9 @@
 import React from 'react';
-import { MovieListPreview } from './components/MovieListPreview';
+import { Header } from './components/header/Header';
 
 function App() {
   return (
-   <MovieListPreview />
+   <Header />
   );
 }
 
