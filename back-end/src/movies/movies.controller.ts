@@ -7,9 +7,9 @@ export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Get('movies')
-  async findOne(@Body() searchMovieDto: SearchMovieDto) {
+  async findAllByName(@Body() searchMovieDto: SearchMovieDto) {
     try {
-      await this.moviesService.findAllByName(searchMovieDto);
+      return await this.moviesService.findAllByName(searchMovieDto);
     } catch (error) {
       throw new NotFoundException({ error: error.message });
     }
