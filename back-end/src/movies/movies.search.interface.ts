@@ -1,10 +1,10 @@
-export interface MoviesData {
+export interface MoviesSearchData {
   Search: Movie[];
   totalResults: string;
   Response: string;
 }
 
-export interface Movie {
+interface Movie {
   Title: string;
   Year: string;
   imdbID: string;
@@ -12,7 +12,7 @@ export interface Movie {
   Poster: string;
 }
 
-export interface MoviesResponse {
+export interface MoviesSearchResponse {
   Search: Movie[];
   totalResult: number;
   pages: number;
