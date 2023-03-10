@@ -1,4 +1,4 @@
-import { Body, Controller, Get, NotFoundException, Param } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { SearchMovieDto } from './dto/search-movies-by-name.dto';
 import { MovieIdDto } from './dto/search-movie-by-id.dto copy';
@@ -7,7 +7,7 @@ import { MovieIdDto } from './dto/search-movie-by-id.dto copy';
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
-  @Get('movies')
+  @Post('movies')
   async findAllByName(@Body() searchMovieDto: SearchMovieDto) {
     try {
       return await this.moviesService.findAllByName(searchMovieDto);
